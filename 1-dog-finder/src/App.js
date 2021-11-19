@@ -1,23 +1,38 @@
+import { BrowserRouter } from "react-router-dom";
+
 import Navigation from "./Components/Navigation"
 import DogRoutes from "./Components/DogRoutes"
 import whiskey from "./dog-pictures/whiskey.jpg";
 import duke from "./dog-pictures/duke.jpg";
 import perry from "./dog-pictures/perry.jpg";
 import tubby from "./dog-pictures/tubby.jpg";
-// import { Route, Switch } from "react-router-dom";
-
 import './App.css';
+
+/**
+I had install "npm i react-router-dom"
+ */
 
 function App({ dogs }) {
   return (
-    <div className="App">
-      <Navigation dogs={dogs} />
-      <div className="container">
-        <DogRoutes dogs={dogs} />
-      </div>
+    <div>
+      <BrowserRouter>
+        <Navigation dogs={dogs} />
+        <div className="container">
+          <DogRoutes dogs={dogs} />
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
+// function App({ dogs }) {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+
+//       </header>
+//     </div>
+//   );
+// }
 
 App.defaultProps = {
   dogs: [
@@ -63,6 +78,5 @@ App.defaultProps = {
     }
   ]
 }
-
 
 export default App;

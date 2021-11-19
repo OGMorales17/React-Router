@@ -1,9 +1,9 @@
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 // import "./DogDetails.css";
 
 function DogDetails({ dog }) {
 
-    if (!dog) return <Redirect to="/dogs" />
+    if (!dog) return <Navigate to="/dogs" />
 
     return (
         <div className="row DogDetails">

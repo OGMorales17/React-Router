@@ -1,30 +1,34 @@
-import { Route, Switch, Redirect } from "react-router-dom";
-import DogList from './DogList'
-// import DogDetails from './DogDetails'
+// import React, { Fragment } from 'react';
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 
-const DogRoutes = ({ dogs }) => {
+import DogList from './DogList';
+import FilterDogDetails from './FilterDogDetails';
 
+function DogRoutes({ dogs }) {
     return (
-        // <Switch>
-        //     <Route exact path="/dogs" >
-        //         <DogList />
-        //     </Route>
-        //     <Route path="/dogs/:name" >
-        //         <DogDetails />
-        //     </Route>
-        //     <Redirect to="/dogs" />
-        // </Switch>
-        <Switch>
-            <Route exact path="/dogs">
-                <DogList dogs={dogs} />
-            </Route>
-            {/* <Route path="/dogs/:name">
-                <FilterDogDetails dogs={dogs} />
-            </Route> */}
-            <Redirect to="/dogs" />
-        </Switch>
-    )
-
+        <BrowserRouter>
+            <Routes>
+                <Route exact path="/dogs" element={<DogList dogs={dogs} />} />
+                <Route path="/dogs/:name" element={<FilterDogDetails dogs={dogs} />} />
+                <Navigate to="/dogs" />
+            </Routes>
+        </BrowserRouter>
+    );
 }
+// function DogRoutes({ dogs }) {
+//     return (
+//         <Routes>
+//             <Fragment>
+//                 <Route exact path="/dogs">
+//                     <DogList dogs={dogs} />
+//                 </Route>
+//                 <Route path="/dogs/:name">
+//                     <FilterDogDetails dogs={dogs} />
+//                 </Route>
+//                 <Navigate to="/dogs" />
+//             </Fragment>
+//         </Routes>
+//     );
+// }
 
 export default DogRoutes;

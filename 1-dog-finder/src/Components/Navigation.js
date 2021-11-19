@@ -1,28 +1,26 @@
-import { Navbar, Nav, Container } from 'reactstrap';
+import React from "react"
 import { NavLink } from "react-router-dom"
+import { Navbar } from 'reactstrap';
+// import "./NavBar.css"
 
-const Navigation = ({ dogs }) => {
+
+function Navigation({ dogs }) {
     const links = dogs.map(dog => (
-        <NavLink key={dog.name} to={`/dogs/${dog.name}`} >
+        <NavLink key={dog.name} to={`/dogs/${dog.name.toLowerCase()}`} >
             {dog.name}
         </NavLink>
     ));
     return (
-        <>
-            <Navbar collapseOnSelect fixed='top' expand='sm' bg='dark' variant='dark'>
-                <Container>
-                    <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-                    <Navbar.Collapse id='responsive-navbar-nav'>
-                        <Nav>
-                            <NavLink exact to="/dogs">Home</NavLink>
-                            {links}
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-
-        </>
-    )
+        <Navbar>
+            <NavLink exact to="/dogs">Home</NavLink>
+            {links}
+        </Navbar>
+    );
 }
 
 export default Navigation;
+
+/**
+ * However, just like bootstrap, I would recommend that you place their own demo code for a collapsing menu
+ * in the component first. Make sure that works, and then change it to be what you want.
+ */
