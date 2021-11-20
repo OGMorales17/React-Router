@@ -1,34 +1,17 @@
-// import React, { Fragment } from 'react';
-import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
-
-import DogList from './DogList';
+import { Routes, Route } from 'react-router-dom';
 import FilterDogDetails from './FilterDogDetails';
+import DogList from './DogList';
+// import Navigation from './Navigation';
 
 function DogRoutes({ dogs }) {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route exact path="/dogs" element={<DogList dogs={dogs} />} />
-                <Route path="/dogs/:name" element={<FilterDogDetails dogs={dogs} />} />
-                <Navigate to="/dogs" />
-            </Routes>
-        </BrowserRouter>
+        <Routes>
+            <Route path="/" element={<DogList dogs={dogs} />} />
+            <Route path="/dogs" element={<DogList dogs={dogs} />} />
+            <Route path="/dogs/:name" element={<FilterDogDetails dogs={dogs} />} />
+
+        </Routes>
     );
 }
-// function DogRoutes({ dogs }) {
-//     return (
-//         <Routes>
-//             <Fragment>
-//                 <Route exact path="/dogs">
-//                     <DogList dogs={dogs} />
-//                 </Route>
-//                 <Route path="/dogs/:name">
-//                     <FilterDogDetails dogs={dogs} />
-//                 </Route>
-//                 <Navigate to="/dogs" />
-//             </Fragment>
-//         </Routes>
-//     );
-// }
 
 export default DogRoutes;

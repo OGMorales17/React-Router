@@ -1,0 +1,10 @@
+.DogList img {
+  width: 100%;
+  border-radius: 4%;
+  border: 2px solid rgb(199, 193, 236);
+  box-shadow: 0 0 10px #9e9e9e;
+}
+
+.text-center {
+  margin-bottom: 50px;
+}

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-// import "./DogList.css";
+import "./DogList.css";
 
-function DogList({ dogs }) {
+const DogList = ({ dogs }) => {
     return (
         <div className="DogList">
             <div className="row mt-4">

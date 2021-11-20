@@ -3,7 +3,6 @@ import DogDetails from './DogDetails';
 
 function FilterDogDetails({ dogs }) {
     const { name } = useParams();
-
     if (name) {
         const currentDog = dogs.find(
             dog => dog.name.toLowerCase() === name.toLowerCase()

@@ -1,0 +1,16 @@
+.DogDetail-Info {
+  margin-left: 200px;
+}
+
+.DogDetails img {
+  width: 75%;
+  max-width: 40%;
+  border-radius: 5%;
+  border: 2px solid rgb(189, 179, 248);
+  box-shadow: 0 0 10px #9e9e9e;
+}
+
+.DogDetails {
+  margin-top: 50px;
+}
+

@@ -14,25 +14,18 @@ I had install "npm i react-router-dom"
 
 function App({ dogs }) {
   return (
-    <div>
-      <BrowserRouter>
-        <Navigation dogs={dogs} />
-        <div className="container">
-          <DogRoutes dogs={dogs} />
-        </div>
-      </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <BrowserRouter>
+          <Navigation dogs={dogs} />
+          <div className="container">
+            <DogRoutes dogs={dogs} />
+          </div>
+        </BrowserRouter>
+      </header>
     </div>
   );
 }
-// function App({ dogs }) {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-
-//       </header>
-//     </div>
-//   );
-// }
 
 App.defaultProps = {
   dogs: [

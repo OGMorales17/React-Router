@@ -1,7 +1,6 @@
-import React from "react"
 import { NavLink } from "react-router-dom"
 import { Navbar } from 'reactstrap';
-// import "./NavBar.css"
+import "./NavBar.css"
 
 
 function Navigation({ dogs }) {
@@ -12,7 +11,7 @@ function Navigation({ dogs }) {
     ));
     return (
         <Navbar>
-            <NavLink exact to="/dogs">Home</NavLink>
+            <NavLink to="/dogs">Home</NavLink>
             {links}
         </Navbar>
     );
