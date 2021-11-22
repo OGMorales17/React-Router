@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./NewColorForm.css";
 
 function NewColorForm({ addColor }) {
-
   const [form, updateForm] = useState({ name: "", hex: "#ffffff" });
   let navigate = useNavigate();
-
   function handleChange(e) {
     e.persist();
     updateForm(f => ({ ...f, [e.target.name]: e.target.value }));
@@ -15,11 +14,10 @@ function NewColorForm({ addColor }) {
   function handleSubmit(e) {
     e.preventDefault();
     addColor({ [form.name]: form.hex });
-    navigate.push("/colors");
+    navigate("/colors");
   }
 
   const { hex, name } = form;
-  // console.log(form)
 
   return (
     <div className="NewColor">
